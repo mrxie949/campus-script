@@ -2,9 +2,9 @@
 import streamlit as st
 import requests
 import pandas as pd
-from datetime import datetime
 import time
 import pytz
+import random  # 修复：添加 random 模块导入
 from streamlit.components.v1 import html
 
 # ===== 动态时钟组件 =====
@@ -247,10 +247,13 @@ with st.form("script_form", border=True):
                 if "|" in result:
                     st.success("🎉 脚本生成成功!")
                     
-                    # 显示流行短语标签
+                    # 显示流行短语标签（修复后的代码）
                     st.subheader("🔥 使用的流行短语")
-                    selected_phrases = random.sample(TRENDY_PHRASES, min(5, len(TRENDY_PHRASES)))
-                    st.write(" | ".join([f"`{phrase}`" for phrase in selected_phrases]))
+                    if TRENDY_PHRASES and len(TRENDY_PHRASES) >= 5:
+                        selected_phrases = random.sample(TRENDY_PHRASES, min(5, len(TRENDY_PHRASES)))
+                        st.write(" | ".join([f"`{phrase}`" for phrase in selected_phrases]))
+                    else:
+                        st.warning("无法加载流行短语库")
                     
                     # 表格处理
                     st.divider()
@@ -289,7 +292,8 @@ with st.form("script_form", border=True):
                                 mime="text/csv",
                                 use_container_width=True
                             )
-                        except:
+                        except Exception as e:
+                            st.error(f"表格处理错误: {str(e)}")
                             st.code(result)
                     else:
                         st.write(result)
