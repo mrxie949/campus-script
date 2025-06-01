@@ -110,4 +110,4 @@ with st.expander("📚 使用指南", expanded=True):
 
 # 底部信息
 st.divider()
-st.caption("© 2023 短视频脚本生成器 | 技术支持: contact@example.com")
+st.caption("© 2025 短视频脚本生成器 | 技术支持: contact@example.com")
