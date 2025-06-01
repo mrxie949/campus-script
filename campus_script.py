@@ -6,8 +6,8 @@ from datetime import datetime
 import time  # 新增用于请求限速
 
 # ===== 用户配置区 =====
-# 在这里替换成你的Moonshot API密钥（从 https://platform.moonshot.cn 获取）
-MOONSHOT_API_KEY = "sk-你的Moonshot密钥"  # 👈 替换这里
+
+MOONSHOT_API_KEY = "sk-sqrfIzSxn92laOhBxS9HSMZ6Y4itPpZ70Z49v1pWnIl7RgQb"  # 👈 替换这里
 MOONSHOT_API_URL = "https://api.moonshot.cn/v1/chat/completions"
 
 # ===== 修复后的AI生成核心 =====
