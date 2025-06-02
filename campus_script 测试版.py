@@ -644,10 +644,10 @@ footer {
 """, unsafe_allow_html=True)
 
 # 显示API状态
-st.sidebar.markdown(f"### API状态")
-st.sidebar.success(f"✅ Moonshot API 已连接")
-st.sidebar.caption(f"使用端点: {active_api_url}")
-st.sidebar.caption(f"密钥: {MOONSHOT_API_KEY[:8]}...{MOONSHOT_API_KEY[-4:]}")
+st.sidebar.markdown(f"### 站点状态")
+st.sidebar.success(f"✅ 正常运行 已连接")
+st.sidebar.caption("使用端点: 保密")
+st.sidebar.caption(f"key: {MOONSHOT_API_KEY[:8]}...{MOONSHOT_API_KEY[-4:]}")
 
 # 顶部区域
 with st.container():
